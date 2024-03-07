@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panic Button</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .button-container {
+    text-align: center;
+  }
+
+  .panic-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .panic-button:hover {
+    background-color: #cc0000;
+  }
+</style>
+</head>
+<body>
+
+<div class="button-container">
+  <button class="panic-button" id="panicButton">Panic Button</button>
+</div>
+
+<script>
+  // Define default hotkey and website URL
+  let hotkey = 'P';
+  let websiteUrl = 'https://example.com';
+
+  // Listen for keydown event to trigger panic button
+  document.addEventListener('keydown', function(event) {
+    if (event.key.toUpperCase() === hotkey) {
+      window.location.href = websiteUrl;
+    }
+  });
+
+  // Add click event listener to panic button
+  document.getElementById('panicButton').addEventListener('click', function() {
+    window.location.href = websiteUrl;
+  });
+</script>
+
+</body>
+</html>
